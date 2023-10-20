@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "customblockoverlay",
+  "version": "${version}",
+  "name": "Custom Block Overlay",
+  "description": "Customize your Block Overlay Color!",
+  "authors": [
+    "ChloeCDN"
+  ],
+  "license": "GPL-3.0",
+  "icon": "assets/customblockoverlay/icon.png",
+  "environment": "*",
+  "mixins": [
+    "customblockoverlay.mixins.json"
+  ],
+  "entrypoints": {
+    "client": [
+      "de.chloedev.customblockoverlay.CustomBlockOverlayMod"
+    ]
+  },
+  "accessWidener": "customblockoverlay.accesswidener"
+}
