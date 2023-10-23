@@ -1,31 +1,30 @@
 package de.chloedev.customblockoverlay;
 
+import de.chloedev.chloelibfabric.io.FileConfig;
+import de.chloedev.customblockoverlay.option.OptionManager;
 import net.fabricmc.api.ClientModInitializer;
-import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.File;
-import java.io.IOException;
 
 public class CustomBlockOverlayMod implements ClientModInitializer {
 
     private static CustomBlockOverlayMod INSTANCE;
-    private YamlFile config;
+    private FileConfig config;
+    private OptionManager optionManager;
 
     @Override
     public void onInitializeClient() {
         INSTANCE = this;
-        try {
-            this.config = new YamlFile(new File("./config/customblockoverlay.yml"));
-            this.config.createOrLoadWithComments();
-            this.config.addDefault("color", "0.0:0.0:0.0:102.0");
-            this.config.save();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        this.config = new FileConfig(new File("./config/customblockoverlay.conf"), false);
+        this.optionManager = new OptionManager();
     }
 
-    public YamlFile getConfig() {
+    public FileConfig getConfig() {
         return config;
+    }
+
+    public OptionManager getOptionManager() {
+        return optionManager;
     }
 
     public static CustomBlockOverlayMod getInstance() {

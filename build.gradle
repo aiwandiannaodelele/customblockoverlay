@@ -1,8 +1,7 @@
-import org.apache.commons.io.FileUtils
-
 plugins {
     id 'fabric-loom' version '1.3-SNAPSHOT'
     id 'maven-publish'
+    id 'com.modrinth.minotaur' version '2.+'
 }
 
 loom {
@@ -19,13 +18,15 @@ base {
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
+    maven { url 'https://maven.terraformersmc.com/releases/' }
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    include(modImplementation('com.github.Carleslc.Simple-YAML:Simple-Yaml:1.8.4'))
+    include(modImplementation("com.github.chloecdn:chloelib-fabric:cbd06a6001"))
+    modImplementation("com.terraformersmc:modmenu:8.0.0")
 }
 
 processResources {
@@ -57,4 +58,15 @@ publishing {
             from components.java
         }
     }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = "O9CNoMNv"
+    versionNumber = project.mod_version
+    versionName = "Custom Block Overlay ${project.mod_version}"
+    uploadFile = remapJar
+    gameVersions = ["${project.minecraft_version}"]
+    loaders = ["fabric"]
+    dependencies = []
 }

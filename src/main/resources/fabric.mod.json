@@ -16,6 +16,9 @@
   "entrypoints": {
     "client": [
       "de.chloedev.customblockoverlay.CustomBlockOverlayMod"
+    ],
+    "modmenu": [
+      "de.chloedev.customblockoverlay.util.ModMenuProvider"
     ]
   },
   "accessWidener": "customblockoverlay.accesswidener"

@@ -12,12 +12,10 @@ public class MixinWorldRenderer {
 
     @ModifyArgs(method = "drawBlockOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;drawCuboidShapeOutline(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;Lnet/minecraft/util/shape/VoxelShape;DDDFFFF)V"))
     public void setOutlineColor(Args args) {
-        String color = CustomBlockOverlayMod.getInstance().getConfig() == null ? "0.0:0.0:0.0:102.0" : CustomBlockOverlayMod.getInstance().getConfig().getString("color", "0.0:0.0:0.0:102.0");
-        String[] s = color.split(":");
-        float red = Float.parseFloat(s[0]);
-        float green = Float.parseFloat(s[1]);
-        float blue = Float.parseFloat(s[2]);
-        float alpha = Float.parseFloat(s[3]);
+        int red = CustomBlockOverlayMod.getInstance().getOptionManager().getRedColorOption().getValue();
+        int green = CustomBlockOverlayMod.getInstance().getOptionManager().getGreenColorOption().getValue();
+        int blue = CustomBlockOverlayMod.getInstance().getOptionManager().getBlueColorOption().getValue();
+        int alpha = CustomBlockOverlayMod.getInstance().getOptionManager().getAlphaColorOption().getValue();
 
         args.set(6, (red / 255.0f));
         args.set(7, (green / 255.0f));
