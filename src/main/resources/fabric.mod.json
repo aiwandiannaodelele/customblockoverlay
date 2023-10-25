@@ -7,7 +7,7 @@
   "authors": [
     "ChloeCDN"
   ],
-  "license": "GPL-3.0",
+  "license": "WTFPL",
   "icon": "assets/customblockoverlay/icon.png",
   "environment": "*",
   "mixins": [
