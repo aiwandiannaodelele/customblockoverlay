@@ -1,7 +1,7 @@
 package de.chloedev.customblockoverlay;
 
-import de.chloedev.chloelibfabric.io.FileConfig;
 import de.chloedev.customblockoverlay.option.OptionManager;
+import de.chloedev.kianalibfabric.io.FileConfiguration;
 import net.fabricmc.api.ClientModInitializer;
 
 import java.io.File;
@@ -9,17 +9,17 @@ import java.io.File;
 public class CustomBlockOverlayMod implements ClientModInitializer {
 
     private static CustomBlockOverlayMod INSTANCE;
-    private FileConfig config;
+    private FileConfiguration config;
     private OptionManager optionManager;
 
     @Override
     public void onInitializeClient() {
         INSTANCE = this;
-        this.config = new FileConfig(new File("./config/customblockoverlay.conf"), false);
+        this.config = new FileConfiguration(new File("./config/customblockoverlay.conf"));
         this.optionManager = new OptionManager();
     }
 
-    public FileConfig getConfig() {
+    public FileConfiguration getConfig() {
         return config;
     }
 
