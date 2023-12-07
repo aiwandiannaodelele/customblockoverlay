@@ -26,10 +26,10 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    // This is retrieved from my local repo for development purposes. When compiling, please use the commented artifact below instead and comment this!
-    include(modImplementation("de.chloedev:kianalib-fabric:+"))
-    // See above. Uncomment this for compiling.
-    // include(modImplementation("com.github.kianagit:kianalib-fabric:2925359ee5"))
+    // This is retrieved from my local repo for development purposes.
+    //include(modImplementation("de.chloedev:kianalib-fabric:+"))
+    // See above. This is used instead for GitHub Releases, so the app can be properly compiled.
+    include(modImplementation("com.github.kianagit:kianalib-fabric:2925359ee5"))
     modImplementation("com.terraformersmc:modmenu:9.0.0-pre.1")
 }
 
