@@ -15,10 +15,10 @@ public class OptionManager {
 
     public OptionManager() {
         FileConfiguration config = CustomBlockOverlayMod.getInstance().getConfig();
-        this.redColorOption = new SimpleOption<>("Red", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("Red: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-red", 0), ActionUtil::doNothing);
-        this.greenColorOption = new SimpleOption<>("Green", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("Green: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-green", 0), ActionUtil::doNothing);
-        this.blueColorOption = new SimpleOption<>("Blue", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("Blue: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-blue", 0), ActionUtil::doNothing);
-        this.alphaColorOption = new SimpleOption<>("Alpha", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("Alpha: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-alpha", 102), ActionUtil::doNothing);
+        this.redColorOption = new SimpleOption<>("Red", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("红色: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-red", 0), ActionUtil::doNothing);
+        this.greenColorOption = new SimpleOption<>("Green", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("绿色: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-green", 0), ActionUtil::doNothing);
+        this.blueColorOption = new SimpleOption<>("Blue", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("蓝色: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-blue", 0), ActionUtil::doNothing);
+        this.alphaColorOption = new SimpleOption<>("Alpha", SimpleOption.emptyTooltip(), (text, value) -> Text.literal("不透明度: " + value), new SimpleOption.ValidatingIntSliderCallbacks(0, 255), config.read(Integer.class, "color-alpha", 102), ActionUtil::doNothing);
     }
 
     public SimpleOption<Integer> getRedColorOption() {

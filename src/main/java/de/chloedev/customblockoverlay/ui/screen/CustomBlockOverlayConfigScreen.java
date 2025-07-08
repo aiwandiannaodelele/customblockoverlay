@@ -29,7 +29,7 @@ public class CustomBlockOverlayConfigScreen extends Screen {
         this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, button -> {
             this.close();
         }).dimensions(8, this.height - 28, 50, 20).build());
-        this.addDrawableChild(ButtonWidget.builder(Text.literal("Save to Configuration"), button -> {
+        this.addDrawableChild(ButtonWidget.builder(Text.literal("保存设置"), button -> {
             CustomBlockOverlayMod.getInstance().getConfig().write("color-red", CustomBlockOverlayMod.getInstance().getOptionManager().getRedColorOption().getValue(), true);
             CustomBlockOverlayMod.getInstance().getConfig().write("color-green", CustomBlockOverlayMod.getInstance().getOptionManager().getGreenColorOption().getValue(), true);
             CustomBlockOverlayMod.getInstance().getConfig().write("color-blue", CustomBlockOverlayMod.getInstance().getOptionManager().getBlueColorOption().getValue(), true);
